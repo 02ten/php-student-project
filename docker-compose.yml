@@ -21,3 +21,12 @@ services:
       - ./src/php/:/var/www/html
     links:
       - db
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+    ports:
+      - 8080:80
+    depends_on:
+      - db
