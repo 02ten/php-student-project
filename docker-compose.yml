@@ -1,0 +1,23 @@
+services: 
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "33061:3306"
+    volumes:
+      - ./src/db/init.sql:/database/application/init.sql
+    command: --init-file /database/application/init.sql 
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+
+  server:
+    build: ./src/
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/php/:/var/www/html
+    links:
+      - db
