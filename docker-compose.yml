@@ -2,10 +2,12 @@ services:
 
   db:
     image: mysql:5.7
+    container_name: MYSQL
+    hostname: MYSQL
     ports:
-      - "33061:3306"
+      - "8806:3306"
     volumes:
-      - ./src/db/init.sql:/database/application/init.sql
+      - ./db/init.sql:/database/application/init.sql
     command: --init-file /database/application/init.sql 
     environment:
       MYSQL_ROOT_USER: root
@@ -15,12 +17,20 @@ services:
 
   server:
     build: ./src/
-    ports:
-      - "80:80"
     volumes:
-      - ./src/php/:/var/www/html
+      - ./src:/var/www/html
+      - ./cfg/apache2.conf:/etc/apache2/apache2.conf
     links:
       - db
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:433"
+    volumes:
+      - ./src:/var/www/html
+      - ./cfg/nginx.conf:/etc/nginx/nginx.conf
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
