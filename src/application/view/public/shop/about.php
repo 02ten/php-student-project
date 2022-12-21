@@ -22,14 +22,14 @@ setcookie('last_uri', $last_uri);
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <?php switch ($_COOKIE['theme']){
     case 'light':
-        echo '<link href="/public/light.css" rel="stylesheet" type="text/css">';
+        echo '<link href="/assets/css/light.css" rel="stylesheet" type="text/css">';
         break;
     default:
-        echo '<link rel="stylesheet" type="text/css" href="/public/dark.css">';
+        echo '<link rel="stylesheet" type="text/css" href="/assets/css/dark.css">';
 }?>
 </head>
 <?php
-include 'cookie/about_lang.php';
+include 'application/model/about_lang.php';
 
 switch ($_COOKIE['lang']) {
                 case 'en':

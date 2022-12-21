@@ -19,7 +19,7 @@ try {
             getProductByName();
             break;
         default:
-            echo "Unknown request"
+            echo "Unknown request";
     }
 }catch (Exception $e) {
 

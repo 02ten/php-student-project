@@ -1,13 +1,14 @@
 <?php
 
 
-require_once('../vendor/autoload.php');
+require_once('vendor/autoload.php');
 
 
 use Amenadiel\JpGraph\Graph\Graph;
 use Amenadiel\JpGraph\Plot\LinePlot;
-DEFINE('NDATAPOINTS',360);
-DEFINE('SAMPLERATE',240); 
+
+DEFINE('NDATAPOINTS', 360);
+DEFINE('SAMPLERATE', 240);
 // Создадим немного данных для визуализации:
 $xdata = array();
 $ydata = array();
@@ -22,11 +23,11 @@ for ($i = 0; $i < 50; $i++) {
 $graph = new Graph(800, 600, 'auto', 10, true);
 
 // Указываем, какие оси использовать:
-$graph->SetMargin(40,40,30,130);
- 
+$graph->SetMargin(40, 40, 30, 130);
+
 // Fix the Y-scale to go between [0,100] and use date for the x-axis
 $graph->SetScale('datlin');
- 
+
 
 /*
 Создаем экземпляр класса линейного графика, передадим
@@ -49,7 +50,7 @@ $graph->title->Set('CO2 and time');
 например arial.
 */
 $graph->title->SetFont(FF_ARIAL, FS_NORMAL);
-$graph->xaxis->SetFont(FF_VERDANA,FS_NORMAL,10);
+$graph->xaxis->SetFont(FF_VERDANA, FS_NORMAL, 10);
 $graph->yaxis->title->SetFont(FF_TIMES, FS_BOLD);
 
 // Назовем оси:

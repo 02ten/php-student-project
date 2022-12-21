@@ -3,7 +3,7 @@
 use Amenadiel\JpGraph\Plot\AccBarPlot;
 use Amenadiel\JpGraph\Plot\BarPlot;
 
-require_once('../vendor/autoload.php');
+require_once('vendor/autoload.php');
 use Amenadiel\JpGraph\Graph\Graph;
 
 $ydata = array();

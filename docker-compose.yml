@@ -16,7 +16,7 @@ services:
       MYSQL_PASSWORD: secret
 
   server:
-    build: ./src/
+    build: ./
     volumes:
       - ./src:/var/www/html
       - ./cfg/apache2.conf:/etc/apache2/apache2.conf

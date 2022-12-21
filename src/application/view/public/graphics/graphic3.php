@@ -3,7 +3,7 @@
 use Amenadiel\JpGraph\Graph\PieGraph;
 use Amenadiel\JpGraph\Plot\PiePlot3D;
 
-require_once('../vendor/autoload.php');
+require_once('vendor/autoload.php');
 use Amenadiel\JpGraph\Graph\Graph;
 $data = array();
 $legends = array(
